@@ -4,20 +4,16 @@ class Hamming
 
 	def self.compute(strandA, strandB)
 		a = strandA.split("")
-		b = strandB.split("")
-		distance = 0
-		i = 0
+	 	b = strandB.split("")
 
-		while i <= a.length
-			if a.length != b.length
-				raise ArgumentError
-			elsif a[i] != b[i]
-				distance += 1
-				i += 1
-			else
-				i += 1
-			end
-		end
-		distance
+      a.length != b.length ? (raise ArgumentError) : ((0...a.length).count{ |index| a[index] != b[index]})
+
+	 	# if a.length != b.length 
+	 	# 	raise ArgumentError 
+	 	# else
+	 	# 	(0...a.length).count{ |index| a[index] != b[index]}
+   #    end
+
 	end
+
 end 
