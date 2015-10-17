@@ -25,28 +25,27 @@ class ComplementTest < Minitest::Test
     assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
   end
 
-  # def test_dna_complement_of_cytosine_is_guanine
+  def test_dna_complement_of_cytosine_is_guanine
     
-  #   assert_equal 'G', Complement.of_rna('C')
-  # end
+    assert_equal 'G', Complement.of_rna('C')
+  end
 
-  # def test_dna_complement_of_guanine_is_cytosine
+  def test_dna_complement_of_guanine_is_cytosine
     
-  #   assert_equal 'C', Complement.of_rna('G')
-  # end
+    assert_equal 'C', Complement.of_rna('G')
+  end
 
-  # def test_dna_complement_of_uracil_is_adenine
+  def test_dna_complement_of_uracil_is_adenine
     
-  #   assert_equal 'A', Complement.of_rna('U')
-  # end
+    assert_equal 'A', Complement.of_rna('U')
+  end
 
-  # def test_dna_complement_of_adenine_is_thymine
+  def test_dna_complement_of_adenine_is_thymine
     
-  #   assert_equal 'T', Complement.of_rna('A')
-  # end
+    assert_equal 'T', Complement.of_rna('A')
+  end
 
   def test_dna_complement
-    
     assert_equal 'ACTTGGGCTGTAC', Complement.of_rna('UGAACCCGACAUG')
   end
 
@@ -75,10 +74,10 @@ class ComplementTest < Minitest::Test
     assert_raises(ArgumentError) { Complement.of_dna('ACGTXXXCTTAA') }
   end
 
-  # def test_rna_raises_argument_error_on_partially_invalid_input
+  def test_rna_raises_argument_error_on_partially_invalid_input
 
-  #   assert_raises(ArgumentError) { Complement.of_rna('UGAAXXXGACAUG') }
-  # end
+    assert_raises(ArgumentError) { Complement.of_rna('UGAAXXXGACAUG') }
+  end
 
   # Problems in exercism evolve over time,
   # as we find better ways to ask questions.

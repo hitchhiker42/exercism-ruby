@@ -3,7 +3,8 @@ class Complement
 	VERSION = 2
 
    @@dna_complements = {"A" => "U", "G" => "C", "C" => "G", "T" => "A"}
-   @@rna_complements = @@dna_complements.inverse
+   # @@rna_complements = @@dna_complements.invert
+   @@rna_complements = {"U" => "A", "C" => "G", "G" => "C", "A" => "T"}
 
 	def self.of_dna(dnastrand)
 		dna = dnastrand.split('')
@@ -16,18 +17,16 @@ class Complement
 	end	
 
    def self.of_rna(rnastrand)
-      rna = rnastrand.split('')
-      dna = []
+    rna = rnastrand.split('')
+    dna = []
 
-      rna.map do |n|
-         # puts @@dna_complements.key(n)
-         # @@dna_complements.key(n) == nil ? (raise ArgumentError) : (dna << @@dna_complements.key(n))
-         @@rna_complements[n] == nil ? (raise ArgumentError) : (dna << @@rna_complements[n])
-      end
-      puts dna.join('')
-   end
+    rna.map do |n|
+       @@rna_complements[n] == nil ? (raise ArgumentError) : (dna << @@rna_complements[n])
+    end
+    dna.join('')
+   end   
 	
 end
 
-Complement.of_rna('UGAACCCGACAUG')
-Complement.of_rna('T')
+# Complement.of_rna('UGAACCCGACAUG')
+# Complement.of_rna('T')
