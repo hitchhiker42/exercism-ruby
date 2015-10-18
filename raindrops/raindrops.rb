@@ -1,14 +1,11 @@
-require 'prime'
-
 class Raindrops
 
-  def self.convert(num)
-  conversion = { 3 => "Pling", 5 => "Plang", 7 => "Plong"}
-  all_primes = Prime.prime_division(num).flatten
+def self.convert(num)
+   conversion = { 3 => "Pling", 5 => "Plang", 7 => "Plong"}
+   result = ""
 
-    result = all_primes.map{ |prime| prime = conversion[prime] }.join('')
-
-    result == "" ? num.to_s : result
-  end
-
+   conversion.map {|factor, sound| result += sound if (num%factor == 0) }
+   result == "" ? num.to_s : result
+end  
+  
 end
