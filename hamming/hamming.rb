@@ -6,14 +6,7 @@ class Hamming
 		a = strandA.split("")
 	 	b = strandB.split("")
 
-      a.length != b.length ? (raise ArgumentError) : ((0...a.length).count{ |index| a[index] != b[index]})
-
-	 	# if a.length != b.length 
-	 	# 	raise ArgumentError 
-	 	# else
-	 	# 	(0...a.length).count{ |index| a[index] != b[index]}
-   #    end
-
+      a.length != b.length ? (raise ArgumentError) : (0...a.length).count{ |index| a[index] != b[index]}
 	end
 
 end 

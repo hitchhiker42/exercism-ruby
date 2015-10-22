@@ -45,5 +45,3 @@ class Fixnum
 	end
 
 end
-
-93.to_roman

@@ -1,14 +1,15 @@
 class Squares
 	def initialize(number)
       @number = number
+      @array = (1..@number)
    end
 
    def square_of_sums
-      ([*1..@number].inject(0, &:+)) ** 2
+      (@array.inject(&:+)) ** 2
    end
 
    def sum_of_squares
-      (1..@number).inject { |sums, n| sums + (n ** 2) }
+      @array.inject { |sums, n| sums + (n ** 2) }
    end
 
    def difference()
