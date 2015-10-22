@@ -35,20 +35,15 @@ class Fixnum
          3000 => "MMM"
       }
 
-      # year_array = self.to_s.chars.map(&:to_i)
       decimal_places = [1,10,100,1000]
       decimal_year = (self.to_s.chars.map(&:to_i).reverse).zip decimal_places
-      value_list = []
-      roman = []
 
-      decimal_year.each do |i|
-         value_list << i.inject(:*)
-      end
-      
-      p value_list.map { |val| conversion_hash[val]}.reverse.join('')
+      decimal_year.map! { |i| i.inject(:*)}
+
+      decimal_year.map { |val| conversion_hash[val]}.reverse.join('')
 
 	end
 
 end
 
-27.to_roman
+93.to_roman
