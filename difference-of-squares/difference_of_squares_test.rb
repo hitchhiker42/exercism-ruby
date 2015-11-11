@@ -14,7 +14,6 @@ class SquaresTest < Minitest::Test
   end
 
   def test_difference_of_sums_to_5
-    
     assert_equal 170, Squares.new(5).difference
   end
 

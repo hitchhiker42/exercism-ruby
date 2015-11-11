@@ -6,7 +6,6 @@ require_relative 'hamming'
 
 # Test data version:
 # ab84334 Merge pull request #106 from bennn/grep-meta
-
 class HammingTest < Minitest::Test
   def test_identical_strands
     assert_equal 0, Hamming.compute('A', 'A')
