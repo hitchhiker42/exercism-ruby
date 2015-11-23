@@ -2,13 +2,15 @@ class Hamming
 
 VERSION = 1
 
-  def self.compute(str_a, str_b)
+def self.compute(str_a, str_b)
 
-  raise ArgumentError,'unequal string lengths' unless str_a.length == str_b.length
-    (0...str_a.length).count { |index| str_a.chars[index] != str_b.chars[index] }
-  end
+  raise ArgumentError, 'Invalid Input' unless (str_a + str_b).is_a? String
+  
+  asize = str_a.length
+  bsize = str_b.length
+
+  raise ArgumentError,'unequal string lengths' unless asize == bsize
+    (0...asize).count { |index| str_a.chars[index] != str_b.chars[index] }
 
 end
-
-Hamming.compute('AG', 'CT')
-Hamming.compute('GGACTGA', 'GGACTGA')
+end

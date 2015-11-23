@@ -1,21 +1,20 @@
 class Robot
-  # attr_reader :name
 
   RAND_LETTER = ('A'..'Z').to_a
-  RAND_NUMBER = [] << rand(0..9) << rand(0..9) << rand(0..9)
+  RAND_NUMBER = (0..9).to_a 
 
   def name
     @name
   end
 
   def initialize
-    @name = ''
-    @name << RAND_LETTER.sample(2).join('')
-    @name << RAND_NUMBER.sample(3).join('')
+    reset
   end
 
   def reset
-    initialize
+    @name = ''
+    @name << RAND_LETTER.sample(2).join('')
+    @name << RAND_NUMBER.sample(3).join('')
   end
 
 end
