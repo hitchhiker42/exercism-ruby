@@ -1,28 +1,25 @@
 class Prime
   
-  def is_a_prime?(num)
-    eff_primes.all? { |p| curr_num % p != 0 }
+  def self.a_prime?(num, primes)
+    primes.all? { |p| num % p != 0 }
   end
 
-  def nth(nprime)
+  def self.nth(nprime)
     primes = [2]
-    i = 1
     curr_num = 3
 
-    raise ArgumentError, 'Invalid Input' unless (nprime.integer? && nprime > 0)
+    raise ArgumentError, 'Invalid Input' unless nprime.integer? && nprime > 0
 
-    for i in (0...nprime) do 
+    while primes.length < nprime
       root = Math.sqrt(curr_num).floor
-      eff_primes = primes.select { |p| p <= root }
+      root_primes = primes.select { |p| p <= root }
 
-      if (is_a_prime? (curr_num))
+      if a_prime?(curr_num, root_primes)
         primes << curr_num
       end
-
-      curr_num += 2
+    curr_num += 2
     end
 
     primes.last
   end
-
 end
